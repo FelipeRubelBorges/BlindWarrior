@@ -2,28 +2,32 @@ package jogo;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
 public class Ziska {
 
-	private int x;
-	private int y;
-	private int dx;
-	private int dy;
+	private int x, y;
+	private int dx, dy;
+	private int altura, largura;
 	private Image imagem;
+	private List<Flecha> flechas;
 
 	public Ziska() {
 
 		ImageIcon referencia = new ImageIcon("res\\ziska.jpeg");
 		imagem = referencia.getImage();
 
+		flechas = new ArrayList<Flecha>();
+
 		this.x = 100;
 		this.y = 100;
 
 	}
 
-	//metodo pra fazer o gif se mecher 
+	// metodo pra fazer o gif se mecher
 	public void mexer() {
 
 		System.out.println(x + ", " + y);
@@ -47,6 +51,10 @@ public class Ziska {
 			y = 317;
 		}
 
+	}
+
+	public List<Flecha> getFlechas() {
+		return flechas;
 	}
 
 	public int getX() {
@@ -89,9 +97,18 @@ public class Ziska {
 		this.imagem = imagem;
 	}
 
+	public void atira() {
+		this.flechas.add(new Flecha(x + largura, y + altura/2));
+
+	}
+
 	public void keyPressed(KeyEvent tecla) {
 
 		int codigo = tecla.getKeyCode();
+		
+		if(codigo == KeyEvent.VK_SPACE){
+			atira();
+		}
 
 		switch (codigo) {
 		case KeyEvent.VK_UP:
