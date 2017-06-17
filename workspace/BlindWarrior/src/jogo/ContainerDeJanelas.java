@@ -22,7 +22,5 @@ public class ContainerDeJanelas extends JFrame {
 		new ContainerDeJanelas();
 
 	}
-	
-	asdasdasd
 
 }
