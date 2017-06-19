@@ -5,6 +5,8 @@ import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
+//Classe da flecha usado no jogo
+
 public class Flecha {
 
 	private int x, y;

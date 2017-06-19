@@ -5,6 +5,8 @@ import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
+//Classe dos Inimigos
+
 public class Inimigo {
 
 	private int x, y;

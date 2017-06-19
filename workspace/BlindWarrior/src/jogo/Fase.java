@@ -17,6 +17,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+//Classe que possui as caracteristicas da fase
+
 public class Fase extends JPanel implements ActionListener {
 
 	private Image fundo;
