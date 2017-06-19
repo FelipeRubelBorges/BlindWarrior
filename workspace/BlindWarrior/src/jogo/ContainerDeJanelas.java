@@ -11,7 +11,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 
-//Classe Para a Janela do Jogo
+//Classe Para a Janela do Jogo//
 
 public class ContainerDeJanelas extends JFrame {
 
