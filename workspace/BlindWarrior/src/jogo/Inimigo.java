@@ -5,21 +5,30 @@ import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
-public class Flecha {
+public class Inimigo {
 
 	private int x, y;
-	private int largura, altura;
 	private Image imagem;
+	private int largura, altura;
 	private boolean visivel;
 
 	private static final int LARGURA_TELA = 800;
-	private static final int VELOCIDADE = 4;
+	private static final int VELOCIDADE = 1;
 
-	public Flecha(int x, int y) {
+	private static int contador = 0;
+          
+	public Inimigo(int x, int y) {
+		
 		this.x = x;
 		this.y = y;
+		ImageIcon referencia;
 
-		ImageIcon referencia = new ImageIcon("res\\flecha.jpg");
+		if (contador++ % 3 == 0) {
+			referencia = new ImageIcon("res\\inimigo1.gif");
+		} else {
+			referencia = new ImageIcon("res\\inimigo2.gif");
+		}
+
 		imagem = referencia.getImage();
 
 		this.largura = imagem.getWidth(null);
@@ -30,9 +39,10 @@ public class Flecha {
 
 	public void mexer() {
 
-		this.x += VELOCIDADE;
-		if (this.x > LARGURA_TELA) {
-			visivel = false;
+		if (this.x < 0) {
+			this.x = LARGURA_TELA;
+		} else {
+			this.x -= VELOCIDADE;
 		}
 
 	}

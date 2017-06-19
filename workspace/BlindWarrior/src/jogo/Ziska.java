@@ -1,6 +1,7 @@
 package jogo;
 
 import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +15,16 @@ public class Ziska {
 	private int altura, largura;
 	private Image imagem;
 	private List<Flecha> flechas;
+	private boolean isVisivel;
 
 	public Ziska() {
 
 		ImageIcon referencia = new ImageIcon("res\\ziska.jpeg");
 		imagem = referencia.getImage();
 
+		altura = imagem.getHeight(null);
+		largura = imagem.getHeight(null);
+		;
 		flechas = new ArrayList<Flecha>();
 
 		this.x = 100;
@@ -97,16 +102,30 @@ public class Ziska {
 		this.imagem = imagem;
 	}
 
+	public boolean isVisivel() {
+		return isVisivel;
+	}
+
+	public void setVisivel(boolean isVisivel) {
+		this.isVisivel = isVisivel;
+	}
+
 	public void atira() {
-		this.flechas.add(new Flecha(x + largura, y + altura/2));
+		this.flechas.add(new Flecha(x + largura, y + altura / 2));
+
+	}
+
+	public Rectangle getBounds() {
+
+		return new Rectangle(x, y, largura, altura);
 
 	}
 
 	public void keyPressed(KeyEvent tecla) {
 
 		int codigo = tecla.getKeyCode();
-		
-		if(codigo == KeyEvent.VK_SPACE){
+
+		if (codigo == KeyEvent.VK_SPACE) {
 			atira();
 		}
 
