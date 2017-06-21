@@ -30,8 +30,8 @@ public class Fase extends JPanel implements ActionListener {
 	private List<Inimigo> inimigos;
 
 	private int[][] coordenadas = { { 2380, 29 }, { 2600, 59 }, { 1380, 89 }, { 780, 109 }, { 580, 139 }, { 880, 239 },
-			{ 790, 259 }, { 760, 50 }, { 790, 150 }, { 1980, 209 }, { 560, 45 }, { 510, 70 }, { 930, 159 }, { 590, 80 },
-			{ 530, 60 }, { 940, 59 }, { 990, 30 }, { 920, 200 }, { 900, 259 }, { 660, 50 }, { 540, 90 }, { 810, 220 },
+			{ 790, 259 }, { 760, 50 }, { 790, 150 }, { 1980, 209 }, {  560, 45 }, { 510, 70 }, { 930, 159 }, { 590, 80 },
+			{ 530, 60 }, { 940, 59 }, { 990, 30 }, { 920, 200 }, { 900  , 259 }, { 660, 50 }, { 540, 90 }, { 810, 220 },
 			{ 860, 20 }, { 740, 180 }, { 820, 128 }, { 490, 170 }, { 700, 30 }, { 920, 300 }, { 856, 328 },
 			{ 456, 320 } };
 
@@ -86,17 +86,15 @@ public class Fase extends JPanel implements ActionListener {
 				Inimigo in = inimigos.get(i);
 				graficos.drawImage(in.getImagem(), in.getX(), in.getY(), this);
 			}
-			
+
 			graficos.setColor(Color.BLACK);
 			graficos.drawString("INIMIGOS: " + inimigos.size(), 5, 15);
-			
 
-		}else{
-			
-			
+		} else {
+
 			ImageIcon fimJogo = new ImageIcon("res\\Gameover.jpg");
-			
-			graficos.drawImage(fimJogo.getImage(), 0,0, null);
+
+			graficos.drawImage(fimJogo.getImage(), 0, 0, null);
 		}
 		g.dispose();
 
@@ -191,14 +189,14 @@ public class Fase extends JPanel implements ActionListener {
 
 		@Override
 		public void keyPressed(KeyEvent e) {
-			
-			if(e.getKeyCode() == KeyEvent.VK_ENTER){
+
+			if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 				emJogo = true;
 				ziska = new Ziska();
 				inicializaInimigos();
-						
+
 			}
-			
+
 			ziska.keyPressed(e);
 		}
 

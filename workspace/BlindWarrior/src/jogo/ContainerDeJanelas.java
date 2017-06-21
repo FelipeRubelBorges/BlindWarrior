@@ -27,28 +27,29 @@ public class ContainerDeJanelas extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				JOptionPane.showMessageDialog(null, "Jogo do Felipe para Miere ;)", "Obrigado!", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Jogo do Felipe para Miere ;)", "Obrigado!",
+						JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 
 		JMenuItem sair = new JMenuItem("Sair");
 		sair.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-				
+
 			}
 		});
-		
+
 		menu.add(sobre);
 		menu.add(new JSeparator());
 		menu.add(sair);
-		
+
 		barraMenu.add(menu);
-		
+
 		setJMenuBar(barraMenu);
-		
+
 		add(new Fase());
 		setTitle("Blind Warrior");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

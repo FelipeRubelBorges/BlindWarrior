@@ -18,18 +18,21 @@ public class Inimigo {
 	private static final int VELOCIDADE = 1;
 
 	private static int contador = 0;
-          
+
 	public Inimigo(int x, int y) {
-		
+
 		this.x = x;
 		this.y = y;
 		ImageIcon referencia;
 
-		if (contador++ % 3 == 0) {
-			referencia = new ImageIcon("res\\inimigo1.gif");
-		} else {
-			referencia = new ImageIcon("res\\inimigo2.gif");
-		}
+		referencia = new ImageIcon("res\\inimigo2.gif");
+
+		/*
+		 * if (contador++ % 3 == 0) {
+		 * 
+		 * referencia = new ImageIcon("res\\inimigo2.gif"); } else { referencia
+		 * = new ImageIcon("res\\inimigo1.gif"); }
+		 */
 
 		imagem = referencia.getImage();
 

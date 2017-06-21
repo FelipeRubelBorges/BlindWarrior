@@ -8,7 +8,6 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-
 ////Classe do personagem principal
 
 public class Ziska {
