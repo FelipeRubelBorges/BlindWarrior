@@ -37,8 +37,6 @@ public class Ziska {
 	// metodo pra fazer o gif se mecher
 	public void mexer() {
 
-		System.out.println(x + ", " + y);
-
 		x += dx;
 		y += dy;
 
@@ -50,12 +48,12 @@ public class Ziska {
 			x = 596;
 		}
 
-		if (this.y < -13) {
-			y = -13;
+		if (this.y < -10) {
+			y = -10;
 		}
 
-		if (this.y > 317) {
-			y = 317;
+		if (this.y > 500) {
+			y = 500;
 		}
 
 	}

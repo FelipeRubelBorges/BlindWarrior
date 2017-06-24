@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 
 //Classe dos Inimigos
 
-public class Inimigo {
+public class Cidadao {
 
 	private int x, y;
 	private Image imagem;
@@ -15,22 +15,24 @@ public class Inimigo {
 	private boolean visivel;
 
 	private static final int LARGURA_TELA = 800;
-	private static final int VELOCIDADE = 1 ;
+	private static final int VELOCIDADE = 1;
 
 	private static int contador = 0;
 
-	public Inimigo(int x, int y) {
+	public Cidadao(int x, int y) {
 
 		this.x = x;
 		this.y = y;
 		ImageIcon referencia;
 
-		if (contador++ % 3 == 0) {
+		referencia = new ImageIcon("res\\cadeirante.jpg");
 
-			referencia = new ImageIcon("res\\inimigo2.jpg");
-		} else {
-			referencia = new ImageIcon("res\\inimigo1.jpg");
-		}
+		/*
+		 * if (contador++ % 3 == 0) {
+		 * 
+		 * referencia = new ImageIcon("res\\inimigo2.jpg"); } else { referencia
+		 * = new ImageIcon("res\\inimigo1.jpg"); }
+		 */
 
 		imagem = referencia.getImage();
 
@@ -38,6 +40,7 @@ public class Inimigo {
 		this.altura = imagem.getHeight(null);
 
 		visivel = true;
+
 	}
 
 	public void mexer() {
