@@ -1,10 +1,5 @@
 package rubel.felipe;
 
-import org.junit.Assert;
-
-/**
- *
- */
 public class Game {
 
 	static boolean emJogo = true;
@@ -18,17 +13,15 @@ public class Game {
 	}
 
 	public static void atacarInimigo() {
-		Character ziska = new Character();
+		Character enemy = new Character();
 
+		enemy.setHealth(100);
 		Weapon weapon = new Weapon(39);
-		weapon.hurt(ziska);
+		weapon.hurt(enemy);
 
-		int health = ziska.getHealth();
-		Assert.assertEquals(61, health);
+		if (enemy.health < 0) {
 
-		if (ziska.health < 0) {
-
-			System.out.println("Ziska Morreu, o jogo foi perdido");
+			System.out.println("Ziska Matou um Inimigo, Você ganhou o jogo");
 
 			emJogo = false;
 
@@ -37,15 +30,13 @@ public class Game {
 	}
 
 	public static void atacarZiska() {
-		Character enemy = new Character();
+		Character ziska = new Character();
 
+		ziska.setHealth(100);
 		Weapon weapon = new Weapon(59);
-		weapon.hurt(enemy);
+		weapon.hurt(ziska);
 
-		int health = enemy.getHealth();
-		Assert.assertEquals(41, health);
-
-		if (enemy.health < 0) {
+		if (ziska.health < 0) {
 
 			System.out.println("Ziska Matou um Inimigo, Você ganhou o jogo");
 
@@ -57,11 +48,9 @@ public class Game {
 	public static void atacarCitizen() {
 		Character citizen = new Character();
 
+		citizen.setHealth(100);
 		Weapon weapon = new Weapon(39);
 		weapon.hurt(citizen);
-
-		int health = citizen.getHealth();
-		Assert.assertEquals(41, health);
 
 		if (citizen.health < 0) {
 

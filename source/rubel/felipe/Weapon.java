@@ -1,11 +1,5 @@
 package rubel.felipe;
 
-import lombok.AllArgsConstructor;
-
-/**
- *
- */
-@AllArgsConstructor
 public class Weapon {
 
 	int sufferLevel;
@@ -15,6 +9,6 @@ public class Weapon {
 	}
 
 	public void hurt(Character character) {
-		character.suffer( sufferLevel );
+		character.suffer(sufferLevel);
 	}
 }
