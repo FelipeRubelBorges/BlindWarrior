@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.junit.*;
@@ -35,8 +36,7 @@ public class TrabalhandoComListas {
 	@Test
 	public void exercicio1() {
 
-		Collections.sort(itens,
-				(ItensASeremComprados o1, ItensASeremComprados o2) -> Double.compare(o1.preço, o2.preço));
+		Collections.sort(itens,(ItensASeremComprados o1, ItensASeremComprados o2) -> Double.compare(o1.preço, o2.preço));
 
 		// ** Outra forma de realizar o exercicio **
 		/*
@@ -97,14 +97,15 @@ public class TrabalhandoComListas {
 	public void exercicio3() {
 		Map<String, List<ItensASeremComprados>> itensClassificados;
 
-		ItensASeremComprados itens[] = { new ItensASeremComprados("Arroz", 5.99, "Alimento"),
-										 new ItensASeremComprados("Feijao", 10.99, "Alimento"),
-										 new ItensASeremComprados("Macarrao", 3.45, "Alimento"),
-										 new ItensASeremComprados("Cerveja", 3.00, "Bebidas"),
-										 new ItensASeremComprados("Cerveja Ruim", 1.70, "Bebidas"),
-										 new ItensASeremComprados("Pneu", 120.00, "Transporte"),
-										 new ItensASeremComprados("Fraldas", 55.00, "Crianças") };
-
+		ItensASeremComprados itens[] = { new ItensASeremComprados("Arroz",        5.99,   "Alimento"),
+										 new ItensASeremComprados("Feijao",      10.99,   "Alimento"),
+										 new ItensASeremComprados("Macarrao",     3.45,   "Alimento"),
+										 new ItensASeremComprados("Cerveja",      3.00,   "Bebidas"),
+										 new ItensASeremComprados("Cerveja Ruim", 1.70,   "Bebidas"),
+										 new ItensASeremComprados("Pneu",        120.00,  "Transporte"),
+										 new ItensASeremComprados("Fraldas",      55.00,  "Crianças") };
+		
+	
 		itensClassificados = Arrays.asList(itens).stream().collect(Collectors.groupingBy(i -> i.categoria));
 
 		assertEquals(3, itensClassificados.get("Alimento").size());
@@ -121,13 +122,13 @@ public class TrabalhandoComListas {
 	public void exercicio4() {
 		Map<String, Double> itensClassificados = null;
 
-		ItensASeremComprados itens[] = { new ItensASeremComprados("Arroz", 5.99, "Alimento"),
-										 new ItensASeremComprados("Feijao", 10.99, "Alimento"),
-										 new ItensASeremComprados("Macarrao", 3.45, "Alimento"),
-										 new ItensASeremComprados("Cerveja", 3.00, "Bebidas"),
-										 new ItensASeremComprados("Cerveja Ruim", 1.70, "Bebidas"),
-										 new ItensASeremComprados("Pneu", 120.00, "Transporte"),
-										 new ItensASeremComprados("Fraldas", 55.00, "Crianças") };
+		ItensASeremComprados itens[] = { new ItensASeremComprados("Arroz",         5.99,   "Alimento"),
+										 new ItensASeremComprados("Feijao",       10.99,   "Alimento"),
+										 new ItensASeremComprados("Macarrao",      3.45,   "Alimento"),
+										 new ItensASeremComprados("Cerveja",       3.00,   "Bebidas"),
+										 new ItensASeremComprados("Cerveja Ruim",  1.70,   "Bebidas"),
+										 new ItensASeremComprados("Pneu",        120.00,   "Transporte"),
+										 new ItensASeremComprados("Fraldas",       55.00,  "Crianças") };
 
 		itensClassificados = Arrays.asList(itens).stream()
 				.collect(Collectors.groupingBy(i -> i.categoria, Collectors.summingDouble(j -> j.preço)));
