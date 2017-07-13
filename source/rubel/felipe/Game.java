@@ -1,11 +1,9 @@
 package rubel.felipe;
 
-/**
- *
- */
 public class Game {
 
-	public static void main( String[] args ) {
-		System.out.println( "OK" );
+	public static void main(String[] args) {
+
 	}
+
 }

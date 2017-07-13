@@ -1,5 +1,7 @@
 package rubel.felipe.collections;
 
+import java.util.Comparator;
+
 import lombok.*;
 
 /**
@@ -10,6 +12,9 @@ import lombok.*;
 public class ItensASeremComprados {
 
 	String nome;
-	double preço;
+	public double preço;
 	String categoria;
+
+
+
 }
