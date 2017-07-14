@@ -1,14 +1,8 @@
 package rubel.felipe.collections;
 
 import static org.junit.Assert.assertEquals;
-
-import java.math.BigDecimal;
 import java.util.*;
-import java.util.Map.Entry;
-import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
 import org.junit.*;
 
 /**
@@ -91,7 +85,7 @@ public class TrabalhandoComListas {
 	}
 
 	/**
-	 * Classificar itens por "Categoria". Restriçao: com 8 ou menos linhas.
+	 * Classificar itens por "CategoriaDeProduto". Restriçao: com 8 ou menos linhas.
 	 */
 	@Test
 	public void exercicio3() {
@@ -115,7 +109,7 @@ public class TrabalhandoComListas {
 	}
 
 	/**
-	 * Gerar um relatorio de Categoria e a soma do preço de todos os produtos a
+	 * Gerar um relatorio de CategoriaDeProduto e a soma do preço de todos os produtos a
 	 * ela associados. Restriçao: com 8 ou menos linhas.
 	 */
 	@Test
