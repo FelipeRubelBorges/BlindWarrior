@@ -4,8 +4,8 @@ public class Weapon {
 
 	int sufferLevel;
 
-	public Weapon(int i) {
-		// TODO Auto-generated constructor stub
+	public Weapon(int sufferLevel) {
+		this.sufferLevel = sufferLevel;
 	}
 
 	public void hurt(Character character) {

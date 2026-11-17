@@ -24,6 +24,11 @@ public class Funcoes {
 
 	{
 
-		return null;
+		Map<CHAVE, ArrayList<TIPO>> grupos = new LinkedHashMap<>();
+		for (TIPO item : listaOrigem) {
+			CHAVE chave = leitorDeChaveDeAgrupamento.apply(item);
+			grupos.computeIfAbsent(chave, key -> new ArrayList<>()).add(item);
+		}
+		return new ArrayList<>(grupos.values());
 	}
 }
